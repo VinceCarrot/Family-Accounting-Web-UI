@@ -1,0 +1,457 @@
+<section id="page_tools" class="page">
+
+  <h2>Tools</h2>
+
+  <!-- ===================================================== -->
+  <!-- 1️⃣ BLOCK: MANAGE TRANSACTIONS -->
+  <!-- ===================================================== -->
+  <section class="tools-block" id="block-manage-transactions">
+
+    <h3>Manage Transactions & Balance</h3>
+
+    <div class="tools-button-row">
+
+      <button class="tool-card" data-target="update-transaction">
+        🔄 Update Transaction
+      </button>
+
+      <button class="tool-card" data-target="update-balance">
+        🔄 Update Balance
+      </button>
+
+      <button class="tool-card" data-target="download-category-meta">
+        💾 Download Category MetaData
+      </button>
+
+    </div>
+
+    <div class="tools-contents">
+
+      <!-- 1.1 Update Transaction Content -->
+      <div class="tool-content" id="update-transaction">
+        <div class="transaction-entry-filters">
+          <div class="form-row">
+            <label for="transaction-entry-account">Account</label>
+            <select id="transaction-entry-account"></select>
+          </div>
+          <div class="form-row">
+            <label for="transaction-entry-year">Year</label>
+            <select id="transaction-entry-year"></select>
+          </div>
+          <div class="form-row">
+            <label for="transaction-entry-month">Month</label>
+            <select id="transaction-entry-month"></select>
+          </div>
+          <button id="transaction-entry-add" class="transaction-entry-add" type="button" aria-label="Add transaction row" title="Add row">+</button>
+        </div>
+
+        <div class="transaction-entry-scroll">
+          <table class="transaction-entry-table">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Transaction Detail</th>
+                <th>L0 Category</th>
+                <th>L1 Category</th>
+                <th>L2 Category</th>
+                <th>L3 Category</th>
+                <th>Amount</th>
+                <th aria-label="Remove row"></th>
+              </tr>
+            </thead>
+            <tbody id="transaction-entry-body"></tbody>
+          </table>
+        </div>
+
+        <div id="transaction-entry-result" class="upload-result transaction-entry-result" role="status" aria-live="polite"></div>
+        <button id="transaction-entry-save" class="tool-confirm-btn" type="button">Save</button>
+
+      </div>
+      
+      <!-- 1.2 Update Balance Content -->
+      <div class="tool-content" id="update-balance">
+        <div class="transaction-entry-filters">
+          <div class="form-row">
+            <label for="balance-entry-year">Year</label>
+            <select id="balance-entry-year"></select>
+          </div>
+          <div class="form-row">
+            <label for="balance-entry-month">Month</label>
+            <select id="balance-entry-month"></select>
+          </div>
+        </div>
+
+        <table class="balance-entry-table">
+          <thead>
+            <tr><th>Account</th><th>Balance</th></tr>
+          </thead>
+          <tbody id="balance-entry-body"></tbody>
+        </table>
+        <div id="balance-entry-result" class="upload-result balance-entry-result" role="status" aria-live="polite"></div>
+        <button id="balance-entry-save" class="tool-confirm-btn" type="button">Save</button>
+
+      </div>
+
+      <!-- 1.3 Download Account MetaData Content -->
+      <div class="tool-content" id="download-category-meta"> 
+        
+        <button id="download-category-meta-confirm" class="tool-confirm-btn">
+          Download Category MetaData
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 2️⃣ BLOCK: MANAGE ACCOUNTS -->
+  <!-- ===================================================== -->
+  <section class="tools-block" id="block-manage-accounts">
+
+    <h3>Manage Accounts</h3>
+
+    <!-- ===== Tool Buttons (一行) ===== -->
+    <div class="tools-button-row">
+
+      <button class="tool-card" data-target="add-account-content">
+        ➕ Add New Account
+      </button>
+
+      <button class="tool-card" data-target="toggle-account-content">
+        🚦 Activate / Deactivate Account
+      </button>
+
+      <button class="tool-card" data-target="download-account-meta">
+        💾 Download Account MetaData
+      </button>
+
+    </div>
+
+    <!-- ===== Tool Contents (统一放在下面) ===== -->
+    <div class="tools-contents">
+
+      
+      <!-- 2.1 Add Account Content -->
+      <div class="tool-content" id="add-account-content">
+
+        
+        <div class="form-row">
+          <label>Account Category</label>
+          <select id="add-account-category">
+            <option value="">-- Select Category --</option>
+            <option value="bank">Bank Saving Account</option>
+            <option value="card">Credit Cards</option>
+            <option value="cash">Cash Wallet</option>
+            <option value="cpf">CPF</option>
+            <option value="investment">Investment</option>
+          </select>
+        </div>
+
+  
+        <div class="account-fields" id="fields-bank">
+
+          <div class="form-row">
+            <label>Account ID</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Account Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Bank</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Balance</label>
+            <input type="number" step="0.01" value="0.0">
+          </div>
+
+          <div class="form-row">
+            <label>Account Number</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Branch</label>
+            <input type="text" value="---">
+          </div>
+
+          <div class="form-row">
+            <label>Branch Code</label>
+            <input type="text" value="---">
+          </div>
+
+          <div class="form-row">
+            <label>SWIFT Code</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Cash Flow</label>
+            <input type="checkbox" checked>
+          </div>
+
+          <div class="form-row">
+            <label>Active</label>
+            <input type="checkbox" checked>
+          </div>
+
+        </div>
+
+
+        <div class="account-fields" id="fields-card">
+
+          <div class="form-row">
+            <label>Account ID</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Card Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Bank</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Balance</label>
+            <input type="number" step="0.01" value="0.0">
+          </div>
+
+          <div class="form-row">
+            <label>Card Number</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Cash Flow</label>
+            <input type="checkbox" checked>
+          </div>
+
+          <div class="form-row">
+            <label>Active</label>
+            <input type="checkbox" checked>
+          </div>
+
+        </div>
+
+
+        <div class="account-fields" id="fields-cpf">
+
+          <div class="form-row">
+            <label>Account ID</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Account Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Balance</label>
+            <input type="number" step="0.01" value="0.0">
+          </div>
+
+          <div class="form-row">
+            <label>Cash Flow</label>
+            <input type="checkbox" checked>
+          </div>
+
+          <div class="form-row">
+            <label>Active</label>
+            <input type="checkbox" checked>
+          </div>
+
+        </div>
+        
+
+        <div class="account-fields" id="fields-cash">
+
+          <div class="form-row">
+            <label>Account ID</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Account Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Balance</label>
+            <input type="number" step="0.01" value="0.0">
+          </div>
+
+          <div class="form-row">
+            <label>Cash Flow</label>
+            <input type="checkbox" checked>
+          </div>
+
+          <div class="form-row">
+            <label>Active</label>
+            <input type="checkbox" checked>
+          </div>
+
+        </div>
+
+        <div class="account-fields" id="fields-investment">
+
+          <div class="form-row">
+            <label>Account ID</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Account Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-row">
+            <label>Balance</label>
+            <input type="number" step="0.01" value="0.0">
+          </div>
+
+          <div class="form-row">
+            <label>Cash Flow</label>
+            <input type="checkbox" checked>
+          </div>
+
+          <div class="form-row">
+            <label>Active</label>
+            <input type="checkbox" checked>
+          </div>
+
+        </div>
+
+
+      <button id="add-account-confirm" class="tool-confirm-btn">
+        Confirm Add Account
+      </button>
+
+    </div>
+
+
+
+      <!-- 2.2 Toggle Account Content -->
+      <div class="tool-content" id="toggle-account-content">
+
+        <div class="form-row">
+          <label>Select Account</label>
+          <select id="toggle-account-select">
+            <!-- JS 填充 -->
+          </select>
+        </div>
+
+        <div class="toggle-buttons">
+          <button class="activate-btn">Activate</button>
+          <button class="deactivate-btn">Deactivate</button>
+        </div>
+
+      </div>
+
+
+      <!-- 2.3 Download Account MetaData Content -->
+      <div class="tool-content" id="download-account-meta"> 
+        
+        <button id="download-account-meta-confirm" class="tool-confirm-btn">
+          Download Account MetaData
+        </button>
+
+      </div> 
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 3️⃣ BLOCK: MANAGE CUSTOMIZED VIEW -->
+  <!-- ===================================================== -->
+  <section class="tools-block" id="block-manage-view">
+
+    <h3>Manage Customized View</h3>
+
+    <div class="tools-button-row">
+
+      <button class="tool-card" data-target="add-view-content">
+        📊 Add View
+      </button>
+
+      <button class="tool-card" data-target="delete-view-content">
+        🗑️ Delete View
+      </button>
+
+    </div>
+
+    <div class="tools-contents">
+
+      <div class="tool-content" id="add-view-content">
+
+        <p>Coming soon...</p>
+      </div>
+
+      <div class="tool-content" id="delete-view-content">
+
+        <p>Coming soon...</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 4️⃣ BLOCK: MANAGE MORTGAGE -->
+  <!-- ===================================================== -->
+  <section class="tools-block" id="block-manage-mortgage">
+
+    <h3>Manage Mortgage</h3>
+
+    <div class="tools-button-row">
+
+      <button class="tool-card" data-target="update-mortgage-content">
+        🏠 Update Mortgage Info
+      </button>
+
+    </div>
+
+    <div class="tools-contents">
+
+      <div class="tool-content" id="update-mortgage-content">
+
+        <div class="form-row">
+          <label>Mortgage Balance</label>
+          <input type="number" step="0.01" id="mortgage-balance-input">
+        </div>
+
+        <div class="form-row">
+          <label>Update Time (YYYY-MM)</label>
+          <input type="month" id="mortgage-update-time">
+        </div>
+
+        <button class="tool-confirm-btn">
+          Confirm Update
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

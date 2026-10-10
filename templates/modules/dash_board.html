@@ -1,0 +1,106 @@
+<section id="page_dashboard" class="page">
+
+  <!-- ================= HEADER ================= -->
+  
+    <h2>Dashboard</h2>
+
+    <button id="db-toggle-amount-btn" class="db-toggle-btn">
+      Hide Amounts
+    </button>
+ 
+
+
+
+  <!-- ===================================================== -->
+  <!-- 1️⃣ TOTAL ASSETS -->
+  <!-- ===================================================== -->
+  <section id="db-total-assets-section" class="db-block">
+
+    <h3>Total Assets</h3>
+
+    <p 
+      id="db-total-assets"
+      class="amount db-sensitive"
+      data-real-value="0"
+    >
+      S$ 0.00
+    </p>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 2️⃣ 12-MONTH TOTAL ASSETS TREND -->
+  <!-- ===================================================== -->
+  <section id="db-total-trend-section" class="db-block">
+
+    <h3>12-Month Total Assets Trend</h3>
+
+    <div id="db-chart-total-wrapper" class="db-chart-wrapper">
+      <canvas id="db-chart-total"></canvas>
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 3️⃣ TOTAL CASH FLOW -->
+  <!-- ===================================================== -->
+  <section id="db-total-cashflow-section" class="db-block">
+
+    <h3>Total Cash Flow</h3>
+
+    <p 
+      id="db-total-cashflow"
+      class="amount db-sensitive"
+      data-real-value="0"
+    >
+      S$ 0.00
+    </p>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 4️⃣ 12-MONTH CASH FLOW TREND -->
+  <!-- ===================================================== -->
+  <section id="db-cashflow-trend-section" class="db-block">
+
+    <h3>12-Month Cash Flow Trend</h3>
+
+    <div id="db-chart-cashflow-wrapper" class="db-chart-wrapper">
+      <canvas id="db-chart-cashflow"></canvas>
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 5️⃣ MORTGAGE BALANCE -->
+  <!-- ===================================================== -->
+  <section id="db-mortgage-section" class="db-block">
+
+    <h3>Mortgage Balance</h3>
+
+    <p 
+      id="db-mortgage-balance"
+      class="amount db-sensitive"
+      data-real-value="0"
+    >
+      S$ 0.00
+    </p>
+
+    <span>Last Updated:</span>
+    <span id="db-mortgage-update-time">
+      --
+    </span>
+
+  </section>
+
+</section>
+
+ 

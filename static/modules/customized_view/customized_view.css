@@ -1,0 +1,347 @@
+/* =========================
+   Customized View Module
+   ========================= */
+
+#page_customized_view {
+    /* display: flex; */
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ===== Controls ===== */
+
+#page_customized_view .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e6ebf2;
+    border-radius: 12px;
+}
+
+#page_customized_view .control {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 140px;
+}
+
+#page_customized_view .control.grow {
+    flex: 1;
+    min-width: 240px;
+}
+
+#page_customized_view label {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Select */
+
+#page_customized_view select {
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #d6dbe3;
+    padding: 0 8px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+/* ===== Multi Select (Category) ===== */
+
+.multiSelect {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    max-height: 120px;
+    overflow-y: auto;
+
+    padding: 8px;
+    border: 1px solid #d6dbe3;
+    border-radius: 8px;
+    background-color: #fafbff;
+}
+
+.multiSelect label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 13px;
+    color: #374151;
+
+    padding: 4px 6px;
+    border-radius: 6px;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.multiSelect label:hover {
+    background-color: #eef2ff;
+}
+
+.multiSelect input {
+    cursor: pointer;
+}
+
+/* ===== Header ===== */
+
+.viewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.viewHeader h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ===== Chart Layout ===== */
+
+.chartLayout {
+    display: flex;
+    gap: 16px;
+}
+
+.chartLayout.single {
+    flex-direction: column;
+}
+
+.chartBox {
+    background-color: #ffffff;
+    border: 1px solid #e6ebf2;
+    border-radius: 12px;
+
+    padding: 16px;
+}
+
+.chartBox.full {
+    width: 100%;
+}
+
+/* Canvas */
+.cus-block.canvas {
+    width: 80%;
+    height: 50%;
+}
+
+/* #cus-bar-canvas {
+    width: 100%;
+    height: 320px;
+} */
+
+/* ===== Small Text ===== */
+
+.muted {
+    color: #6b7280;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.apply-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.apply-btn:hover {
+  background-color: #4338ca;
+}
+
+
+/* ===== Filter 单行布局 ===== */
+
+.cus-filter-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+
+    flex-wrap: nowrap; /* 强制一行 */
+}
+
+/* 每个控件 */
+.cus-control {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+}
+
+/* category 占满中间空间 */
+.cus-control.grow {
+    /* flex: 1; */
+    min-width: 260px;
+}
+
+/* Apply 按钮靠右且不被压缩 */
+.cus-action {
+    min-width: 100px;
+}
+
+.cus-action .apply-btn {
+    position: relative;
+    z-index: 22;
+}
+
+
+.mr-multiselect-selected {
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    /* ✅ 圆角（和 select 一致） */
+    border-radius: 8px;
+
+    border: 1px solid #d6dbe3;
+    background-color: #ffffff;
+
+    /* ✅ 字号统一（和 select 一样） */
+    font-size: 14px;
+
+    color: #374151;
+}
+
+.mr-multiselect {
+    width: 400px;
+    position: relative;
+}
+
+.mr-multiselect-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    margin-top: 4px;
+
+    border: 1px solid #e6ebf2;
+    border-radius: 8px;
+    background: #fff;
+
+    display: none;
+}
+
+#cus-account-dropdown {
+    max-height: min(65vh, 420px);
+    overflow-y: auto;
+    padding: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(20, 30, 45, 0.14);
+}
+
+#cus-account-dropdown .mr-multiselect-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #374151;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#cus-account-dropdown .mr-multiselect-item:hover {
+    background: #f3f6f8;
+}
+
+#cus-account-dropdown .mr-multiselect-item input {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+#cus-category-dropdown {
+    width: 280px;
+    max-height: none;
+    overflow: hidden;
+    padding: 4px;
+    z-index: 20;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(20, 30, 45, 0.14);
+}
+
+.cus-category-level {
+    min-width: 0;
+    max-height: min(65vh, 420px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 2px 4px;
+    border-right: 1px solid #e6ebf2;
+}
+
+.cus-category-level:last-child {
+    border-right: 0;
+}
+
+.cus-category-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.cus-category-row:hover {
+    background: #f3f6f8;
+}
+
+.cus-category-row input {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.cus-category-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    min-width: 0;
+    padding: 5px 2px;
+    border: 0;
+    background: transparent;
+    color: #374151;
+    font-size: 13px;
+    text-align: left;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.cus-category-name:disabled {
+    cursor: default;
+}
+
+.cus-category-name.has-children::after {
+    content: ">";
+    margin-left: 12px;
+    color: #6b7280;
+}
+
+.cus-block.canvas {
+    width: 100%;
+    height: auto;
+}
+
+.cus-block.canvas .chartBox.full {
+    height: 360px;
+    box-sizing: border-box;
+}
+

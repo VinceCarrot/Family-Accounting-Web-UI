@@ -1,0 +1,92 @@
+<section id="page_customized_view" class="page">
+
+  <!-- ================= HEADER ================= -->
+  <h2>Customized View</h2>
+
+
+  <!-- ===================================================== -->
+  <!-- 1️⃣ FILTER SECTION（单行） -->
+  <!-- ===================================================== -->
+  <section id="cus-filter-section" class="cus-block cus-filter-row">
+
+    <!-- ================= ACCOUNT ================= -->
+    <div class="cus-control">
+
+      <label>Account</label>
+
+      <div id="cus-account-multiselect" class="mr-multiselect">
+        <div class="mr-multiselect-selected" id="cus-account-selected">
+          Select accounts
+          <span class="mr-arrow">&#9662;</span>
+        </div>
+
+        <div class="mr-multiselect-dropdown" id="cus-account-dropdown"></div>
+      </div>
+
+    </div>
+
+
+    <!-- ================= CATEGORY ================= -->
+    <div class="cus-control grow">
+
+      <label>Category</label>
+
+      <div id="cus-category-multiselect" class="mr-multiselect">
+        <div class="mr-multiselect-selected" id="cus-category-selected">
+          Select categories
+          <span class="mr-arrow">&#9662;</span>
+        </div>
+
+        <div class="mr-multiselect-dropdown" id="cus-category-dropdown"></div>
+      </div>
+
+    </div>
+
+
+    <!-- ================= PERIOD ================= -->
+    <div class="cus-control">
+
+      <label>Period</label>
+
+      <select id="cus-select-period">
+        <option value="month" selected>Month</option>
+        <option value="year">Year</option>
+      </select>
+
+    </div>
+
+
+    <!-- ================= APPLY ================= -->
+    <div class="cus-control cus-action">
+
+      <label>&nbsp;</label>
+
+      <button class="apply-btn" id="cus-btn-apply">
+        Apply
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 2️⃣ BAR CHART -->
+  <!-- ===================================================== -->
+  <section class="cus-block canvas">
+
+    <div class="viewHeader">
+      <h3>Trend</h3>
+      <div class="muted small" id="cus-range-text"></div>
+    </div>
+
+    <div class="chartLayout single">
+      <div class="chartBox full">
+        <canvas id="cus-bar-canvas"></canvas>
+      </div>
+    </div>
+
+  </section>
+
+</section>

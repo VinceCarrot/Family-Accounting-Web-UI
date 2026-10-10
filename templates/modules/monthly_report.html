@@ -1,0 +1,108 @@
+<section id="page_monthly_report" class="page">
+
+  <!-- ================= HEADER ================= -->
+  <h2>Monthly Report</h2>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 1️⃣ ACCOUNT SELECTOR (MULTI SELECT) -->
+  <!-- ===================================================== -->
+  <section id="mr-account-selector-section" class="mr-block">
+  <!-- <h3>Select Account(s)</h3> -->
+
+  <div id="mr-account-multiselect" class="mr-multiselect">
+
+    <!-- 显示已选账户 -->
+    <div class="mr-select-hint">
+      Click to select multiple accounts
+    </div>
+    <div class="mr-multiselect-selected" id="mr-multiselect-selected">
+      Select accounts
+      <span class="mr-arrow">&#9662;</span>
+    </div>
+
+    <!-- 下拉列表 -->
+    <div class="mr-multiselect-dropdown" id="mr-multiselect-dropdown">
+      <!-- JS 动态插入账户项 -->
+      <!-- 每个账户格式：
+      <label class="mr-multiselect-item">
+        <input type="checkbox" value="account_id">
+        Account Name
+      </label>
+      -->
+    </div>
+
+    
+  </div>
+</section>
+
+
+  <!-- ===================================================== -->
+  <!-- 2️⃣ ACCOUNT MONTHLY BALANCE TABLE -->
+  <!-- ===================================================== -->
+  <section id="mr-account-balance-section" class="mr-block">
+
+    <h3>Monthly Account Balance</h3>
+
+    <div class="mr-table-wrapper">
+      <table id="mr-account-balance-table" class="mr-table">
+
+        <thead>
+          <tr id="mr-account-balance-header-row">
+            <th>Account / Month</th>
+            <!-- JS dynamically inject month columns -->
+          </tr>
+        </thead>
+
+        <tbody id="mr-account-balance-body">
+          <!-- JS dynamically inject account rows -->
+        </tbody>
+
+      </table>
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 3️⃣ TOTAL SUMMARY TABLE -->
+  <!-- ===================================================== -->
+  <section id="mr-total-summary-section" class="mr-block">
+
+    <h3>Monthly Summary</h3>
+
+    <div class="mr-table-wrapper mr-summary-wrapper">
+      <table id="mr-total-summary-table" class="mr-table">
+
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Total Assets</th>
+            <th>Δ Assets</th>
+            <th>Cash Flow</th>
+            <th>Δ Cash Flow</th>
+          </tr>
+        </thead>
+
+        <tbody id="mr-total-summary-body">
+          <!-- JS dynamically inject summary rows -->
+        </tbody>
+
+      </table>
+
+      <div class="mr-chart-block">
+        <canvas id="mr-spend-income-chart" aria-label="Monthly Spend and Monthly Income"></canvas>
+        <div id="mr-spend-income-legend" class="mr-chart-legend"></div>
+      </div>
+
+      <div class="mr-chart-block">
+        <canvas id="mr-assets-cashflow-chart" aria-label="Assets Total and Cash Flow Total"></canvas>
+        <div id="mr-assets-cashflow-legend" class="mr-chart-legend"></div>
+      </div>
+    </div>
+
+  </section>
+
+</section>

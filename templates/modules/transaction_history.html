@@ -1,0 +1,55 @@
+<section id="page_transaction_history" class="page">
+  <h2>Transaction History</h2>
+
+  <!-- 筛选器 -->
+  <div class="filters">
+    <label>
+      Year
+      <select id="filter-year"></select>
+    </label>
+    <label>
+      Month
+      <select id="filter-month"></select>
+    </label>
+    <label>
+      L0 Category
+      <select id="filter-l0"></select>
+    </label>
+    <label>
+      L1 Category
+      <select id="filter-l1"></select>
+    </label>
+    <label>
+      L2 Category
+      <select id="filter-l2"></select>
+    </label>
+    <label>
+      L3 Category
+      <select id="filter-l3"></select>
+    </label>
+    <label>
+      Accounts
+      <select id="filter-account"></select>
+    </label>
+    <button id="filter-apply">Retrieve Transaction History</button>
+  </div>
+
+  <!-- 表头 -->
+  <div class="transaction-header">
+    <span>Date</span>
+    <span>L0 Category</span>
+    <span>L1 Category</span>
+    <span>L2 Category</span>
+    <span>L3 Category</span>
+    <span>Account</span>
+    <span>Amount</span>
+    <span>Detail</span>
+    <span>Note</span>
+  </div>
+
+
+  <!-- 交易列表 -->
+  <div class="transaction-container" id="transaction-list">
+    <!-- JS 会动态生成交易卡片 -->
+  </div>
+</section>

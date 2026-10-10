@@ -1,0 +1,169 @@
+/* =========================
+   Dashboard 主容器
+========================= */
+#page_dashboard {
+  flex-direction: column;
+  gap: 16px; /* block 之间垂直间距 */
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+
+  /* ===== 局部变量（模块隔离） ===== */
+  --db-bg: #f4f6f8;
+  --db-panel: #ffffff;
+  --db-panel2: #f0f2f5;
+  --db-text: #1a1a1a;
+  --db-muted: #6c757d;
+  --db-border: #dee2e6;
+  --db-shadow: 0 4px 12px rgba(0,0,0,.08);
+  --db-radius: 12px;
+
+  
+}
+
+/* =========================
+   Header
+========================= */
+#db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--db-border);
+}
+
+#db-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--db-text);
+}
+
+#db-toggle-amount-btn {
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 6px 12px;
+  cursor: pointer;
+  background: var(--db-panel2);
+  color: var(--db-text);
+  transition: all 0.15s ease;
+}
+
+#db-toggle-amount-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* =========================
+   Dashboard Block
+========================= */
+.db-block {
+  background: var(--db-panel2);
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 增加每个 block 之间的间距 */
+#page_dashboard .db-block + .db-block {
+  margin-top: 16px;
+}
+
+.db-block h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--db-text);
+}
+
+/* =========================
+   标题 + 金额在同一行
+========================= */
+.db-block.db-row {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   Amount Text
+========================= */
+.amount {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--db-text);
+}
+
+.db-sensitive {
+  transition: all 0.2s ease;
+}
+
+/* =========================
+   Chart Wrapper
+========================= */
+.db-chart-wrapper {
+  background: var(--db-panel);
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 缩小高度，大约为原来的一半 */
+  height: 150px;
+}
+
+.db-chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* =========================
+   Mortgage / Update Section
+========================= */
+#db-mortgage-section, 
+#db-update-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* =========================
+   Last Updated Text
+========================= */
+#db-mortgage-update-time {
+  font-size: 12px;
+  color: var(--db-muted);
+}
+
+/* =========================
+   Hide Amounts Icon
+========================= */
+.db-hidden {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--db-muted);
+}
+
+/* =========================
+   统一 Button 样式
+========================= */
+.db-toggle-btn {
+  border-radius: var(--db-radius);
+  border: 1px solid var(--db-border);
+  padding: 6px 12px;
+  cursor: pointer;
+  background: var(--db-panel2);
+  color: var(--db-text);
+  transition: all 0.15s ease;
+  margin-bottom: 16px;
+}
+
+.db-toggle-btn:hover {
+  filter: brightness(1.05);
+}
+

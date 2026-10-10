@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Family Accounting</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <!-- Global Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <!-- Module Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/header/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/sidebar/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/dash_board/dash_board.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/monthly_report/monthly_report.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/statistics/statistics.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/tools/tools.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/transaction_history/transaction_history.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modules/customized_view/customized_view.css') }}">
+</head>
+
+
+
+<body>
+
+    <!-- <div id="header_container"></div> -->
+    {% include 'modules/header.html' %}
+    <div class="layout">
+        <!-- <div id="sidebar_container"></div> -->
+        {% include 'modules/sidebar.html' %}
+
+        <main class="content">
+            {% include 'modules/dash_board.html' %}
+            {% include 'modules/transaction_history.html' %}
+            {% include 'modules/monthly_report.html' %}
+            {% include 'modules/statistics.html' %}
+            {% include 'modules/customized_view.html' %}
+            {% include 'modules/tools.html' %}
+
+
+
+
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/utils/chart.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    
+    <script type="module"
+        src="{{ url_for('static', filename='js/app.js') }}">
+    </script>
+
+</body>
+</html>

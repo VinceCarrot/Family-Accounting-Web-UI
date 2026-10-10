@@ -1,0 +1,80 @@
+<section id="page_statistics" class="page">
+  <h2>Statistics</h2>
+
+  <div class="controls">
+    <div class="control">
+      <label>Type</label>
+      <select class="selType" id="sta-select-type">
+        <option value="Spend">Spend</option>
+        <option value="Income">Income</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label>Account</label>
+      <select class="selAccount" id="sta-select-account">
+        <option value="all">All Accounts</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label>Period</label>
+      <select class="selPeriod" id="sta-select-period">
+        <option value="year">Year</option>
+        <option value="month" selected>Month</option>
+        <option value="week">Week</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label>Anchor date</label>
+      <input class="anchorDate" type="date" id="sta-select-anchor-date"/>
+    </div>
+
+    <div class="control grow">
+      <label>Path</label>
+      <div class="pathRow">
+        <div class="breadcrumb" id="sta-path-visualization"></div>
+        <button class="btn btnSecondary btnTop" id="sta-btn-top">Top</button>
+        <button class="btn btnSecondary btnUp" id="sta-btn-up">Up</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="viewSwitch">
+    <button class="btn btnSecondary btnPie" id="sta-btn-pie-view">Pie view</button>
+    <button class="btn btnSecondary btnBar" id="sta-btn-bar-view">Bar view</button>
+  </div>
+
+  <section class="viewPie">
+    <div class="viewHeader">
+      <h3>Pie Chart</h3>
+      <div class="muted small rangeTextPie" id="sta-range-text-pie"></div>
+    </div>
+    <div class="chartLayout">
+      <div class="chartBox">
+        <canvas class="pieCanvas" id="sta-pie-canvas"></canvas>
+      </div>
+      <div class="legendBox">
+        <div class="legendTitle">Click a label to drill down</div>
+        <div class="legendList pieLegend" id="sta-pie-legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="viewBar hidden">
+    <div class="viewHeader">
+      <h3>Bar Chart</h3>
+      <div class="muted small rangeTextBar" id="sta-range-text-bar"></div>
+    </div>
+    <div class="chartLayout">
+      <div class="chartBox">
+        <canvas class="barCanvas" id="sta-bar-canvas"></canvas>
+      </div>
+      <div class="legendBox">
+        <div class="legendTitle">Click a label to drill down</div>
+        <div class="legendList barLegend" id="sta-bar-legend"></div>
+      </div>
+    </div>
+  </section>
+</section>

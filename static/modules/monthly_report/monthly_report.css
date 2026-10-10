@@ -1,0 +1,231 @@
+#page_monthly_report {
+  /* display: flex; */
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#page_monthly_report h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.mr-multiselect {
+  position: relative;
+  width: 250px;
+  font-family: sans-serif;
+}
+
+.mr-multiselect-selected {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.mr-multiselect-selected:hover {
+  border-color: #888;
+}
+
+.mr-arrow {
+  margin-left: 10px;
+}
+
+.mr-multiselect-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  max-height: 200px;
+  overflow-y: auto;
+  display: block; /* 默认隐藏 */
+  z-index: 10;
+}
+
+.mr-multiselect-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.mr-multiselect-item:hover {
+  background: #f0f0f0;
+}
+
+.mr-multiselect-item input {
+  margin-right: 6px;
+}
+
+.mr-select-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* ================================
+   Block Section
+================================ */
+
+.mr-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ================================
+   Table Wrapper (Horizontal Scroll)
+================================ */
+
+.mr-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: auto;      /* 横向滚动 */
+  overflow-y: hidden;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ================================
+   Table Base Style
+================================ */
+
+.mr-table {
+  border-collapse: collapse;
+  white-space: nowrap;         /* 禁止换行 */
+  table-layout: fixed;         /* 固定布局 */
+  min-width: 0;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+#mr-account-balance-table,
+#mr-total-summary-table {
+  width: max-content;
+}
+
+#mr-account-balance-table th:not(:first-child),
+#mr-account-balance-table td:not(:first-child),
+#mr-total-summary-table th:not(:first-child),
+#mr-total-summary-table td:not(:first-child) {
+  width: 112px;
+  min-width: 112px;
+  max-width: 112px;
+}
+
+/* 所有单元格 */
+.mr-table th,
+.mr-table td {
+  box-sizing: border-box;
+  padding: 8px 14px;
+  border: 1px solid #e5e7eb;
+  text-align: right;           /* 默认右对齐 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 表头 */
+.mr-table thead {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+/* ================================
+   固定第一列宽度（两个表格一致）
+================================ */
+
+:root {
+  --mr-first-column-width: 180px;
+}
+
+.mr-table th:first-child,
+.mr-table td:first-child {
+  width: var(--mr-first-column-width);
+  min-width: var(--mr-first-column-width);
+  max-width: var(--mr-first-column-width);
+  text-align: left;            /* 第一列左对齐 */
+}
+
+/* ================================
+   Hover 效果
+================================ */
+
+.mr-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ================================
+   Summary 表特殊（第一列文字加粗）
+================================ */
+
+#mr-total-summary-table td:first-child {
+  font-weight: 600;
+}
+
+.mr-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mr-chart-block {
+  width: max-content;
+  max-width: none;
+  padding-top: 14px;
+}
+
+.mr-chart-block canvas {
+  display: block;
+  height: 240px;
+}
+
+.mr-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 30px;
+  padding: 4px 0 0 180px;
+  color: #374151;
+  font-size: 12px;
+}
+
+.mr-chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mr-chart-legend-swatch {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* ================================
+   可选优化（数字对齐更专业）
+================================ */
+
+.mr-table td {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,289 @@
+
+
+#page_statistics {
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+
+  /* ===== 局部变量（模块隔离） ===== */
+  --sta-bg: #f4f6f8;
+  --sta-panel: #ffffff;
+  --sta-panel2: #f0f2f5;
+  --sta-text: #1a1a1a;
+  --sta-muted: #6c757d;
+  --sta-border: #dee2e6;
+  --sta-shadow: 0 4px 12px rgba(0,0,0,.08);
+  --sta-radius: 12px;
+
+  /* Chart colors */
+  --sta-color-1: #3E92CC; /* blue */
+  --sta-color-2: #F45B69; /* coral pink */
+  --sta-color-3: #F6AE2D; /* warm orange */
+  --sta-color-4: #6C9A8B; /* muted teal */
+  --sta-color-5: #9B5DE5; /* soft purple */
+  --sta-color-6: #43AA8B; /* green-teal */
+  --sta-color-7: #F28482; /* soft red */
+  --sta-color-8: #577590; /* slate blue */
+  --sta-color-9: #90BE6D; /* fresh green */
+  --sta-color-10: #F9C74F; /* golden yellow */
+  --sta-color-11: #277DA1; /* deeper blue */
+  --sta-color-12: #C06C84; /* dusty rose */
+}
+
+/* =========================
+   标题
+========================= */
+
+#page_statistics h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--sta-text);
+}
+
+/* =========================
+   Controls 区域
+========================= */
+
+#page_statistics .controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:flex-end;
+}
+
+#page_statistics .control{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+#page_statistics .control.grow{
+  flex:1;
+  min-width:220px;
+}
+
+#page_statistics select,
+#page_statistics input[type="date"]{
+  border:1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  padding:10px 10px;
+  background: var(--sta-panel2);
+  color: var(--sta-text);
+}
+
+/* =========================
+   Path / Breadcrumb 样式（融合版）
+========================= */
+
+#page_statistics .pathRow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+#page_statistics .breadcrumb{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  padding:6px 10px;
+  background: var(--sta-panel2);
+  flex:1;
+}
+
+#page_statistics .crumb{
+  padding:4px 8px;
+  border-radius:999px;
+  background: var(--sta-panel);
+  border:1px solid var(--sta-border);
+  font-size:12px;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+
+#page_statistics .crumb:hover{
+  background: var(--sta-bg);
+}
+
+/* =========================
+   按钮
+========================= */
+
+#page_statistics .btn{
+  border:1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  padding:6px 12px;
+  cursor:pointer;
+  background: var(--sta-panel2);
+  color: var(--sta-text);
+  transition: all .15s ease;
+}
+
+#page_statistics .btn:hover{
+  filter:brightness(1.05);
+}
+
+#page_statistics .btnSecondary{
+  opacity:0.85;
+}
+
+/* =========================
+   View Switch
+========================= */
+
+#page_statistics .viewSwitch{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+}
+
+/* =========================
+   View Header
+========================= */
+
+#page_statistics .viewHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+#page_statistics .muted{
+  color:var(--sta-muted);
+}
+
+#page_statistics .small{
+  font-size:12px;
+}
+
+/* =========================
+   Chart Layout（左右等宽）
+========================= */
+
+#page_statistics .chartLayout{
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap:14px;
+  align-items:start;
+}
+
+/* 图表容器 */
+#page_statistics .chartBox{
+  position:relative;
+  border:1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  background: var(--sta-panel2);
+  padding:12px;
+  min-width:0;
+  height:min(65vh, 560px);
+  min-height:320px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#page_statistics .viewPie .chartBox{
+  width:min(100%, 65vh);
+  height:auto;
+  min-height:0;
+  aspect-ratio:1 / 1;
+  justify-self:center;
+}
+
+/* Legend 容器 */
+#page_statistics .legendBox{
+  border:1px solid var(--sta-border);
+  border-radius: var(--sta-radius);
+  background: var(--sta-panel2);
+  padding:12px;
+}
+
+/* 不强制高度，避免拉伸 */
+#page_statistics canvas{
+  width:100% !important;
+  height:100% !important;
+}
+
+/* =========================
+   Legend 样式（新版融合）
+========================= */
+
+#page_statistics .legendTitle{
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:13px;
+}
+
+#page_statistics .legendList{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+#page_statistics .legendItem{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 10px;
+  border-radius: var(--sta-radius);
+  border:1px solid var(--sta-border);
+  background: var(--sta-panel);
+  cursor:pointer;
+  transition: all .15s ease;
+}
+
+#page_statistics .legendItem:hover{
+  filter:brightness(1.05);
+}
+
+#page_statistics .legendLeft{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+#page_statistics .swatch{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#888; /* JS 会覆盖 */
+}
+
+#page_statistics .legendName{
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+#page_statistics .legendRight{
+  font-size:12px;
+  color:var(--sta-muted);
+}
+
+/* =========================
+   自动循环上色（Legend）
+========================= */
+
+#page_statistics .legendItem:nth-child(8n+1) .swatch{background:var(--sta-color-1);}
+#page_statistics .legendItem:nth-child(8n+2) .swatch{background:var(--sta-color-2);}
+#page_statistics .legendItem:nth-child(8n+3) .swatch{background:var(--sta-color-3);}
+#page_statistics .legendItem:nth-child(8n+4) .swatch{background:var(--sta-color-4);}
+#page_statistics .legendItem:nth-child(8n+5) .swatch{background:var(--sta-color-5);}
+#page_statistics .legendItem:nth-child(8n+6) .swatch{background:var(--sta-color-6);}
+#page_statistics .legendItem:nth-child(8n+7) .swatch{background:var(--sta-color-7);}
+#page_statistics .legendItem:nth-child(8n+8) .swatch{background:var(--sta-color-8);}
+
+/* =========================
+   隐藏控制
+========================= */
+
+#page_statistics .hidden{
+  display:none;
+}
