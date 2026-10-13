@@ -268,7 +268,7 @@ export function initCustomizedView() {
       const val = Number(tx.amount);
       if (!Number.isFinite(val)) return;
 
-      map.set(key, (map.get(key) || 0) + Math.abs(val));
+      map.set(key, (map.get(key) || 0) + val);
     });
 
     // 排序
@@ -315,7 +315,6 @@ export function initCustomizedView() {
           },
           y: {
             beginAtZero: true,
-            min: 0,
             title: { display: true, text: "Amount" }
           }
         }
