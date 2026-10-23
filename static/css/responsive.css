@@ -1,0 +1,168 @@
+/* =========================================================
+   Responsive / Mobile adaptation (手机窄屏适配)
+   ---------------------------------------------------------
+   仅在窄屏 (<=768px) 生效；宽屏(PC)不匹配此媒体查询，
+   因此 PC 端显示方式完全不受影响。
+   本文件为纯新增样式，不修改任何现有规则。
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* =========================
+     整体布局：竖向堆叠
+     header(固定) → sidebar(顶部横向栏) → content(全宽)
+  ========================= */
+  .layout {
+    flex-direction: column;
+    margin-top: 64px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 12px;
+  }
+
+  /* =========================
+     顶栏
+  ========================= */
+  .header {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+
+  /* =========================
+     Sidebar：从左侧固定栏改为顶部横向导航条
+  ========================= */
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: stretch;
+
+    border-right: none;
+    border-bottom: 1px solid #e6ebf2;
+
+    padding-top: 0;
+
+    overflow-x: auto;           /* 窄屏可横向滑动 */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 折叠按钮在窄屏无意义，隐藏（其功能本就未启用） */
+  .sidebar__toggle {
+    display: none;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4px;
+    width: auto;
+    padding: 6px 8px;
+  }
+
+  .sidebar__item {
+    height: auto;
+    padding: 8px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex: 0 0 auto;             /* 不压缩，保持可点击宽度 */
+  }
+
+  .sidebar__text {
+    font-size: 13px;
+  }
+
+  /* =========================
+     Dashboard
+  ========================= */
+  #page_dashboard {
+    padding: 12px;
+  }
+
+  /* =========================
+     Statistics：双列图表网格 → 单列堆叠
+  ========================= */
+  #page_statistics {
+    padding: 12px;
+  }
+
+  #page_statistics .chartLayout {
+    grid-template-columns: 1fr;   /* 原为左右两列 */
+  }
+
+  #page_statistics .chartBox {
+    height: min(60vh, 360px);
+    min-height: 240px;
+  }
+
+  #page_statistics .viewPie .chartBox {
+    width: 100%;
+  }
+
+  /* 路径控件占满整行 */
+  #page_statistics .control.grow {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+
+  /* =========================
+     Customized View：筛选行允许换行、下拉与控件全宽
+  ========================= */
+  #page_customized_view .cus-filter-row {
+    flex-wrap: wrap;              /* 原为 nowrap 强制一行 */
+  }
+
+  #page_customized_view .chartLayout {
+    flex-direction: column;      /* 图表并排 → 上下堆叠 */
+  }
+
+  #page_customized_view .cus-control,
+  #page_customized_view .cus-control.grow,
+  #page_customized_view .control,
+  #page_customized_view .control.grow {
+    min-width: 0;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  /* 账户多选下拉全宽 */
+  #page_customized_view .mr-multiselect {
+    width: 100%;
+  }
+
+  #cus-category-dropdown {
+    width: min(280px, 92vw);
+  }
+
+  /* =========================
+     Monthly Report：多选框全宽；图例贴左
+     (表格已自带横向滚动，无需改动)
+  ========================= */
+  #page_monthly_report {
+    padding: 12px;
+  }
+
+  #page_monthly_report .mr-multiselect {
+    width: 100%;
+  }
+
+  #page_monthly_report .mr-chart-legend {
+    padding-left: 0;
+  }
+
+  /* =========================
+     Transaction History / Tools
+     (卡片与筛选器已 flex-wrap；表格已有滚动容器)
+  ========================= */
+  #page_transaction_history {
+    padding: 12px;
+  }
+
+  #page_tools {
+    padding: 12px;
+  }
+}

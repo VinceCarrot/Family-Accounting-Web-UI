@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Family Accounting</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
@@ -18,6 +19,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='modules/tools/tools.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='modules/transaction_history/transaction_history.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='modules/customized_view/customized_view.css') }}">
+    <!-- Responsive / Mobile adaptation (必须最后加载以覆盖窄屏样式) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 
 
